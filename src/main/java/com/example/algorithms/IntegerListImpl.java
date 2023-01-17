@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class IntegerListImpl implements IntegerList {
     private Integer[] data;
     private int size = 0;
+    private int arrLength = 0;
 
     public IntegerListImpl() {
         this.data = new Integer[]{};
@@ -69,6 +70,12 @@ public class IntegerListImpl implements IntegerList {
     public int binaryIndexOf(Integer item) {
         Integer[] array = toArray();
         sort(array);
+        return binarySearch(array, item);
+    }
+
+    public int binaryIndexOfSortRecursionArray(Integer item) {
+        Integer[] array = toArray();
+        sortRecursion(array,1, array.length);
         return binarySearch(array, item);
     }
 
@@ -156,7 +163,21 @@ public class IntegerListImpl implements IntegerList {
         }
     }
 
-    private int binarySearch(Integer[] array, int element){
+    private void sortRecursion(Integer[] array,int i, int n){
+        int value = array[i];
+        int j = i;
+        while (j > 0 && array[j - 1] > value)
+            {
+                array[j] = array[j - 1];
+                j--;
+            }
+        array[j] = value;
+        if (i + 1 < n) {
+            sortRecursion(array, i + 1, n);
+        }
+    }
+
+    private int binarySearch(Integer[] array, int element) {
         int min = 0;
         int max = array.length - 1;
 
@@ -191,7 +212,17 @@ public class IntegerListImpl implements IntegerList {
     }
 
     private void grow() {
-        this.data = Arrays.copyOf(this.data, this.data.length + 1);
+        if (this.size != 0) {
+            int newSize = (int) Math.round(this.data.length * 1.5);
+            this.data = Arrays.copyOf(this.data, newSize);
+            arrLength=newSize;
+        } else {
+            this.data = Arrays.copyOf(this.data, this.data.length + 1);
+            arrLength=1;
+        }
     }
 
+    public int getArrLength() {
+        return arrLength;
+    }
 }

@@ -231,4 +231,28 @@ public class IntegerListTest {
         Assertions.assertNotEquals(new Integer[]{2, 1, 3},
                 integerList.toArray());
     }
+
+    @Test
+    public void whenSizeIsOverThenSizeGrowsInOneAndHalf(){
+        this.integerList.add(1);
+        Assertions.assertEquals(1,this.integerList.getArrLength());
+        this.integerList.add(2);
+        Assertions.assertEquals(2,this.integerList.getArrLength());
+        this.integerList.add(3);
+        Assertions.assertEquals(3,this.integerList.getArrLength());
+        this.integerList.add(4);
+        Assertions.assertEquals(5,this.integerList.getArrLength());
+    }
+
+    @Test
+    public void AddedSevenMixedElementsInListAndUsedSortRecursionThenSortAndFindIndexOfElement(){
+        this.integerList.add(3);
+        this.integerList.add(6);
+        this.integerList.add(0);
+        this.integerList.add(4);
+        this.integerList.add(1);
+        this.integerList.add(5);
+        this.integerList.add(2);
+        Assertions.assertEquals(2, this.integerList.binaryIndexOfSortRecursionArray(2));
+    }
 }
