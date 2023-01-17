@@ -117,7 +117,7 @@ public class IntegerListTest {
     }
 
     @Test
-    public void whenAddedSevenMixedElementsInListThenSortAndFindIndexOfElement(){
+    public void whenAddedSevenMixedElementsInListThenSortAndFindIndexOfElement() {
         this.integerList.add(3);
         this.integerList.add(6);
         this.integerList.add(0);
@@ -144,7 +144,6 @@ public class IntegerListTest {
         Assertions.assertEquals(3, this.integerList.size());
         Assertions.assertEquals(-1, this.integerList.indexOf(MIN_VALUE));
     }
-
 
 
     @Test
@@ -233,19 +232,19 @@ public class IntegerListTest {
     }
 
     @Test
-    public void whenSizeIsOverThenSizeGrowsInOneAndHalf(){
+    public void whenSizeIsOverThenSizeGrowsInOneAndHalf() {
         this.integerList.add(1);
-        Assertions.assertEquals(1,this.integerList.getArrLength());
+        Assertions.assertEquals(1, this.integerList.getArrLength());
         this.integerList.add(2);
-        Assertions.assertEquals(2,this.integerList.getArrLength());
+        Assertions.assertEquals(2, this.integerList.getArrLength());
         this.integerList.add(3);
-        Assertions.assertEquals(3,this.integerList.getArrLength());
+        Assertions.assertEquals(3, this.integerList.getArrLength());
         this.integerList.add(4);
-        Assertions.assertEquals(5,this.integerList.getArrLength());
+        Assertions.assertEquals(5, this.integerList.getArrLength());
     }
 
     @Test
-    public void AddedSevenMixedElementsInListAndUsedSortRecursionThenSortAndFindIndexOfElement(){
+    public void AddedSevenMixedElementsInListAndUsedSortRecursionThenSortAndFindIndexOfElement() {
         this.integerList.add(3);
         this.integerList.add(6);
         this.integerList.add(0);

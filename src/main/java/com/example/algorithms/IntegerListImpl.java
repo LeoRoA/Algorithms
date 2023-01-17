@@ -75,7 +75,7 @@ public class IntegerListImpl implements IntegerList {
 
     public int binaryIndexOfSortRecursionArray(Integer item) {
         Integer[] array = toArray();
-        sortRecursion(array,1, array.length);
+        sortRecursion(array, 1, array.length);
         return binarySearch(array, item);
     }
 
@@ -163,14 +163,13 @@ public class IntegerListImpl implements IntegerList {
         }
     }
 
-    private void sortRecursion(Integer[] array,int i, int n){
+    private void sortRecursion(Integer[] array, int i, int n) {
         int value = array[i];
         int j = i;
-        while (j > 0 && array[j - 1] > value)
-            {
-                array[j] = array[j - 1];
-                j--;
-            }
+        while (j > 0 && array[j - 1] > value) {
+            array[j] = array[j - 1];
+            j--;
+        }
         array[j] = value;
         if (i + 1 < n) {
             sortRecursion(array, i + 1, n);
@@ -215,10 +214,10 @@ public class IntegerListImpl implements IntegerList {
         if (this.size != 0) {
             int newSize = (int) Math.round(this.data.length * 1.5);
             this.data = Arrays.copyOf(this.data, newSize);
-            arrLength=newSize;
+            arrLength = newSize;
         } else {
             this.data = Arrays.copyOf(this.data, this.data.length + 1);
-            arrLength=1;
+            arrLength = 1;
         }
     }
 
